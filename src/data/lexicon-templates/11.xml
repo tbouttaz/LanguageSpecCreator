@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- [source] is [target] [predicate] [long] -->
+
+<!DOCTYPE dt>
+<dt>
+	<node cat="smain" rel="root">
+		<node cat="verb" rel="hd" root="be"/>
+		<node cat="np" rel="su" idx="source"/>
+		<node cat="np" rel="comp">
+			<node cat="adj" rel="mod" idx="predicate" />
+			<node cat="det" rel="det" idx="target" />
+			<node cat="noun" rel="hd" root="long" />
+		</node> 
+	</node>
+</dt>

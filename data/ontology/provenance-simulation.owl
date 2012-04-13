@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.policygrid.org/provenance-simulation.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:utility="http://www.policygrid.org/utility.owl#"
+    xmlns:gen="http://www.policygrid.org/provenance-generic.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:ontology="http://openprovenance.org/ontology#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.policygrid.org/provenance-simulation.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.policygrid.org/utility.owl"/>
+    <owl:imports rdf:resource="http://www.policygrid.org/provenance-generic.owl"/>
+    <owl:imports rdf:resource="http://openprovenance.org/ontology"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="TaskCollection">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.policygrid.org/utility.owl#Collection"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://openprovenance.org/ontology#Artifact"/>
+  <owl:Class rdf:ID="ModelBuild">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.policygrid.org/provenance-generic.owl#ProjectDevelopment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SoftwareLibrary">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Computational"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SimulationDataResource">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.policygrid.org/provenance-generic.owl#Data"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Computational">
+    <rdfs:subClassOf rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.policygrid.org/provenance-generic.owl#DataCollection"/>
+  <owl:Class rdf:ID="ModelConfiguration">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.policygrid.org/provenance-generic.owl#DataPreparation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SimulationModel">
+    <rdfs:subClassOf rdf:resource="#Computational"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ModelRevision">
+    <rdfs:subClassOf rdf:resource="http://www.policygrid.org/provenance-generic.owl#ProjectDevelopment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OBIAMAModelStateOntology">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SimulationOutput"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SimulationInput"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.policygrid.org/provenance-generic.owl#Ontology"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SimulationModelDocumentation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.policygrid.org/provenance-generic.owl#Documentation"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SimulationGridService">
+    <rdfs:subClassOf rdf:resource="#Computational"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SimulationOutputAnalysis">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.policygrid.org/provenance-generic.owl#DataAnalysis"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SimulationModelRun">
+    <rdfs:subClassOf rdf:resource="http://www.policygrid.org/provenance-generic.owl#DataCollection"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OBIAMAActionLibrary">
+    <rdfs:subClassOf rdf:resource="#SoftwareLibrary"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SimulationInput">
+    <rdfs:subClassOf rdf:resource="#SimulationDataResource"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://openprovenance.org/ontology#Agent"/>
+  <owl:Class rdf:ID="OBIAMAExecutionAgent">
+    <rdfs:subClassOf rdf:resource="http://openprovenance.org/ontology#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OBIAMAUser">
+    <rdfs:subClassOf rdf:resource="http://openprovenance.org/ontology#Agent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ResourceCollection">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Collection of resources</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.policygrid.org/utility.owl#Collection"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OBIAMAModelRun">
+    <rdfs:subClassOf rdf:resource="#SimulationModelRun"/>
+  </owl:Class>
+  <owl:Class rdf:ID="WorkflowExperiment">
+    <rdfs:subClassOf rdf:resource="http://www.policygrid.org/provenance-generic.owl#Data"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SimulationOutput">
+    <rdfs:subClassOf rdf:resource="#SimulationDataResource"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BugEnhancment">
+    <rdfs:subClassOf rdf:resource="http://www.policygrid.org/provenance-generic.owl#Documentation"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Datatype"/>
+  <owl:Class rdf:ID="Manual">
+    <rdfs:subClassOf rdf:resource="http://www.policygrid.org/provenance-generic.owl#Documentation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OBIAMAModelStructureOntology">
+    <rdfs:subClassOf rdf:resource="#SimulationInput"/>
+    <rdfs:subClassOf rdf:resource="http://www.policygrid.org/provenance-generic.owl#Ontology"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SoftwareLicence">
+    <rdfs:subClassOf rdf:resource="http://www.policygrid.org/provenance-generic.owl#Documentation"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SimulationModelInstance">
+    <rdfs:subClassOf rdf:resource="#Computational"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Script">
+    <rdfs:subClassOf rdf:resource="#Computational"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="hasDynamicLibraries">
+    <rdfs:domain rdf:resource="#SimulationModelRun"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="doesNotApplyToInstance">
+    <rdfs:range rdf:resource="#SimulationModelInstance"/>
+    <rdfs:domain rdf:resource="#BugEnhancment"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasObservationSchedule">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="hasSchedule"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasLicence">
+    <rdfs:range rdf:resource="#SoftwareLicence"/>
+    <rdfs:domain rdf:resource="#Computational"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Every computational resource must have a lincence</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="configures">
+    <rdfs:domain rdf:resource="#ModelConfiguration"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasTaskItem">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.policygrid.org/utility.owl#hasItem"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#TaskCollection"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasInterviewSchedule">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#hasSchedule"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="fixesOrImplements">
+    <rdfs:domain rdf:resource="#SimulationModel"/>
+    <rdfs:range rdf:resource="#BugEnhancment"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="usedResource">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="hasInput"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasSchedule">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#hasInput"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="questionnaireUsed">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#hasInput"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="usesLibraries">
+    <rdfs:range rdf:resource="#SoftwareLibrary"/>
+    <rdfs:domain rdf:resource="#SimulationModelInstance"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasData">
+    <rdfs:domain rdf:resource="#SimulationDataResource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDocumentation">
+    <rdfs:domain rdf:resource="#SimulationModel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="forModel">
+    <rdfs:range rdf:resource="#SimulationModel"/>
+    <rdfs:domain rdf:resource="#SimulationDataResource"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasInput">
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Collection"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasCodingSchedule">
+    <rdfs:subPropertyOf rdf:resource="#hasSchedule"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="GeneralFindings">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#Project"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="hasResults"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Results/Comments</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="hasProcessors">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="KeyFindings">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#Project"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasResults"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Results/Comments</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Novelty">
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#Project"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasResults"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Results/Comments</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Recommendations">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#Project"/>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:about="#hasResults"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Results/Comments</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#hasResults">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#Project"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Results/Comments</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Comments">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:subPropertyOf rdf:resource="#hasResults"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Results/Comments</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="hasOperatingSystem">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="compilerVersion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SimulationModelInstance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="previousVersion">
+    <rdfs:range rdf:resource="#SimulationModel"/>
+    <rdfs:domain rdf:resource="#SimulationModel"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="runOf">
+    <rdfs:domain rdf:resource="#SimulationModelRun"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="actualBehaviour">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#BugEnhancment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hostedBy">
+    <rdfs:domain rdf:resource="#SimulationModelInstance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasEndDate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >When</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasMemory">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="hasOperatingSystemVersion">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="desiredBehaviour">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#BugEnhancment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="compiler">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SimulationModelInstance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isImplementationOf">
+    <rdfs:domain rdf:resource="#SimulationModelInstance"/>
+    <rdfs:range rdf:resource="#SimulationModel"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:Datatype/>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+  <owl:Datatype/>
+  <owl:Datatype/>
+  <owl:Datatype/>
+  <owl:Datatype/>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

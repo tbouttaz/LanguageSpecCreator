@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- [source]'s [predicate] is [target] -->
+
+<!DOCTYPE dt>
+<dt>
+	<node cat="smain" rel="root">
+		<node cat="verb" rel="hd" root="be" />
+		<node cat="np" rel="comp" idx="target" />
+		<node cat="np" rel="su">
+			<node cat="np" rel="det" idx="source">
+				<morph case="genitive" />
+			</node>
+			<node cat="noun" rel="hd" idx="predicate" />
+		</node>
+	</node>
+</dt>

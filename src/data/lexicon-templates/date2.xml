@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- [source] was [predicate] on [target] -->
+
+<!DOCTYPE dt>
+<dt>
+	<node cat="smain" rel="root">
+		<node cat="verb" rel="hd" idx="predicate">
+			<morph actor="passive" tense="past" />
+		</node>
+		<node cat="np" rel="obj" idx="source" />
+		<node cat="pp" rel="ppmod" idx="target" />
+	</node>
+</dt>

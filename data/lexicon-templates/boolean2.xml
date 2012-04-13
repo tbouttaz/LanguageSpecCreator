@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- [source] (does not) [predicate] -->
+
+<!DOCTYPE dt>
+<dt>
+	<node cat="smain" rel="root">
+		<node cat="verb" rel="hd" idx="predicate" />
+		<node cat="np" rel="su" idx="source"/>
+	</node>
+</dt>

@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:opm="http://openprovenance.org/model/opmo#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns="http://www.policygrid.org/ourspacesVRE.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.policygrid.org/ourspacesVRE.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://openprovenance.org/model/opmo"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="SocialNetworkingAction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="UserAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NewBlogPost">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ProjectAction"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#SocialNetworkingAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SetPrivacy">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ResourceAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="EditProfile">
+    <rdfs:subClassOf rdf:resource="#SocialNetworkingAction"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ResourceAction">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#UserAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NewSubproject">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ProjectAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="InvitePerson">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;
+      User invited a person to his/her contact list.
+    &lt;/p&gt;</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#SocialNetworkingAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Comment">
+    <rdfs:subClassOf rdf:resource="#SocialNetworkingAction"/>
+    <rdfs:subClassOf rdf:resource="#ResourceAction"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CommunicationAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#UserAction">
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/opmv/ns#Process"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RemovePerson">
+    <rdfs:subClassOf rdf:resource="#SocialNetworkingAction"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;
+      User removed a person from his/her contact list.
+    &lt;/p&gt;</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="EmailResource">
+    <rdfs:subClassOf rdf:resource="#ResourceAction"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CommunicationAction">
+    <rdfs:subClassOf rdf:resource="#UserAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="EditResource">
+    <rdfs:subClassOf rdf:resource="#ResourceAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="BlogAction">
+    <rdfs:subClassOf rdf:resource="#CommunicationAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="UpdateStatus">
+    <rdfs:subClassOf rdf:resource="#SocialNetworkingAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Tag">
+    <rdfs:subClassOf rdf:resource="#ResourceAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SetResourceProperty">
+    <rdfs:subClassOf rdf:resource="#ResourceAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="InviteProjectMember">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ProjectAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Login">
+    <rdfs:subClassOf rdf:resource="#SocialNetworkingAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="UploadResource">
+    <rdfs:subClassOf rdf:resource="#ResourceAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NewProject">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ProjectAction"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#ProjectAction">
+    <rdfs:subClassOf rdf:resource="#UserAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AddProjectEvent">
+    <rdfs:subClassOf rdf:resource="#ProjectAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RemoveProject">
+    <rdfs:subClassOf rdf:resource="#ProjectAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StartChat">
+    <rdfs:subClassOf rdf:resource="#SocialNetworkingAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DownloadResource">
+    <rdfs:subClassOf rdf:resource="#ResourceAction"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SystemAction">
+    <rdfs:subClassOf rdf:resource="http://purl.org/net/opmv/ns#Process"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ChangeProjectSettings">
+    <rdfs:subClassOf rdf:resource="#ProjectAction"/>
+  </owl:Class>
+  <owl:AllDisjointClasses/>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.7, Build 620)  http://protege.stanford.edu -->

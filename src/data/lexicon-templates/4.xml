@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- [source] was [predicate] by(as, in, on) [target] -->
+
+<!DOCTYPE dt>
+<dt>
+	<node cat="smain" rel="root">
+		<node cat="verb" rel="hd" idx="predicate" >
+			<morph actor="passive" />
+		</node>
+		<node cat="np" rel="obj" idx="source" />
+		<node cat="pp" rel="ppmod">
+			<node cat="prep" rel="hd" root="by" />
+			<node cat="np" rel="obj" idx="target" />
+		</node>
+	</node>
+</dt>

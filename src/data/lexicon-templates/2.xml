@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- [source] [predicate] [target] -->
+
+<!DOCTYPE dt>
+<dt>
+	<node cat="smain" rel="root">
+		<node cat="verb" rel="hd" idx="predicate"/>
+		<node cat="np" rel="su" idx="source"/>
+		<node cat="np" rel="obj" idx="target" />
+	</node>
+</dt>

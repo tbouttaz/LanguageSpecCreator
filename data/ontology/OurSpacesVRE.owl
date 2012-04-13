@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:swap="http://www.w3.org/2000/10/swap/pim/contact#"
+    xmlns="http://www.policygrid.org/ourspacesVRE.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:project="http://www.policygrid.org/project.owl#"
+    xmlns:wgs="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xml:base="http://www.policygrid.org/ourspacesVRE.owl" > 
+  <rdf:Description rdf:nodeID="A0">
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restricted to workpackage members</rdf:first>
+    <rdf:rest rdf:nodeID="A1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#OurSpacesAccount">
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+    <owl:equivalentClass rdf:resource="http://rdfs.org/sioc/ns#User"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#Organisation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Year">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasOrganisation">
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Organisation"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasResearchInterest">
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#MapContainer">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ProjectContainer">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasAddress">
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Address"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#timestamp">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#OurSpacesVRE">
+    <rdfs:subClassOf rdf:resource="#VRE"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UserProfileContainer">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdfs.org/sioc/ns#User">
+    <owl:equivalentClass rdf:resource="#OurSpacesAccount"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdfs.org/sioc/ns#function_of">
+    <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#User"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#timestamp-type-owl_DatatypeProperty">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:label>
+    <rdf:object rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:predicate rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+    <rdf:subject rdf:resource="#timestamp"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#aboutUser">
+    <rdfs:range rdf:resource="#OurSpacesAccount"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#UserProfileContainer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BlogTitle">
+    <rdfs:domain rdf:resource="#BlogContainer"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">private</rdf:first>
+    <rdf:rest rdf:nodeID="A2"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:rest rdf:nodeID="A3"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restricted to project members</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <owl:oneOf rdf:nodeID="A5"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataRange"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <owl:oneOf rdf:nodeID="A0"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataRange"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ourSpacesID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#OurSpacesAccount"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Database id in ourSpaces</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#GroupContainer">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:rest rdf:nodeID="A7"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdfs.org/sioc/ns#has_function">
+    <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#User"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VRE">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Space"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasPhoto">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#OurSpacesAccount"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ModelContainer">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</rdf:first>
+    <rdf:rest rdf:nodeID="A8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasWebsite">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasContact">
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/knows"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#DocumentContainer">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasJobTitle">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#DataContainer">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BlogContainer">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#OurSpacesGroup">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Usergroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#aboutProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#ProjectContainer"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/project.owl#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Comment">
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BlogSubtitle">
+    <rdfs:domain rdf:resource="#BlogContainer"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unknown</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->

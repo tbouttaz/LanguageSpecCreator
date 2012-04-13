@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:opm="http://openprovenance.org/ontology#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:geop="http://www.policygrid.org/geo-properties.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.policygrid.org/geo-properties.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.geonames.org/ontology"/>
+    <owl:imports rdf:resource="http://openprovenance.org/ontology"/>
+  </owl:Ontology>
+  <owl:ObjectProperty rdf:ID="submittedAt">
+    <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    <rdfs:domain rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A location where the Artifact was submitted</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="issuedAt">
+    <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    <rdfs:domain rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A location of formal issurance of the Artifact</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="analysedAt">
+    <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    <rdfs:domain rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="storedAt">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A location where the Artifact was stored</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    <rdfs:domain rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="createdAt">
+    <rdfs:domain rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+    <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The location where the resource was made</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="publishedAt">
+    <rdfs:domain rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A location where the resource was made available</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="collectedAt">
+    <rdfs:domain rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+    <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="modifiedAt">
+    <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    <rdfs:domain rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A location where the resource was changed.</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="aboutLocation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A location described by the Artifact</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.geonames.org/ontology#Feature"/>
+    <rdfs:domain rdf:resource="http://openprovenance.org/ontology#Artifact"/>
+  </owl:ObjectProperty>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->

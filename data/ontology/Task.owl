@@ -1,0 +1,1520 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.policygrid.org/task.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:utility="http://www.policygrid.org/utility.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:resource="http://www.policygrid.org/resource.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.policygrid.org/task.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.policygrid.org/utility.owl"/>
+    <owl:imports rdf:resource="http://www.policygrid.org/resource.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="SimulationExperiment">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="SimulationTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TaskCollection">
+    <rdfs:subClassOf rdf:resource="http://www.policygrid.org/utility.owl#Collection"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StatisticalAnalysis">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DataAnalysisTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Semi-structuredInterview">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Interview"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DisseminationTask">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Task"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ContingentValuation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DataCollectionTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ContentAnalysis">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataAnalysisTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ResearchDiary">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataCollectionTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DataAnalysisTask">
+    <rdfs:subClassOf rdf:resource="#Task"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SystemTest">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#SimulationTask"/>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="HasRun"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ProjectDevelopmentTask">
+    <rdfs:subClassOf rdf:resource="#Task"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StructuredObservation">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataCollectionTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Coding">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DataPreparationTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="StructuredInterview">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Interview"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ConversationAnalysis">
+    <rdfs:subClassOf rdf:resource="#DataAnalysisTask"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Interview">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataCollectionTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="DesignTask">
+    <rdfs:subClassOf rdf:resource="#Task"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DataEntry">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataPreparationTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ModelConfiguration">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataPreparationTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ModelBuild">
+    <rdfs:subClassOf rdf:resource="#ProjectDevelopmentTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="GrantApplication">
+    <rdfs:subClassOf rdf:resource="#ProjectDevelopmentTask"/>
+  </owl:Class>
+  <owl:Class rdf:about="#SimulationTask">
+    <rdfs:subClassOf rdf:resource="#Task"/>
+  </owl:Class>
+  <owl:Class rdf:about="#DataCollectionTask">
+    <rdfs:subClassOf rdf:resource="#Task"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="SamplingProcedures"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:ID="TimePeriodCovered"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Transcribing">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#DataPreparationTask"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#DataPreparationTask">
+    <rdfs:subClassOf rdf:resource="#Task"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FocusGroup">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="InterpretativeMethodsUsed"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#DataCollectionTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Verification">
+    <rdfs:subClassOf rdf:resource="#SimulationTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SimulationModelRun">
+    <rdfs:subClassOf rdf:resource="#DataCollectionTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Reporting">
+    <rdfs:subClassOf rdf:resource="#DisseminationTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ExploratoryExperiment">
+    <rdfs:subClassOf rdf:resource="#SimulationTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ReleaseModel">
+    <rdfs:subClassOf rdf:resource="#DisseminationTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="UnstructuredInterview">
+    <rdfs:subClassOf rdf:resource="#Interview"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RolePlayingGame">
+    <rdfs:subClassOf rdf:resource="#DataCollectionTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="DiscourseAnalysis">
+    <rdfs:subClassOf rdf:resource="#DataAnalysisTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ModelRevision">
+    <rdfs:subClassOf rdf:resource="#ProjectDevelopmentTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LiteratureReview">
+    <rdfs:subClassOf rdf:resource="#ProjectDevelopmentTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="QuestionnaireSurvey">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="ResponseRate"/>
+        </owl:onProperty>
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:minCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#DataCollectionTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Calibration">
+    <rdfs:subClassOf rdf:resource="#SimulationTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Experiment">
+    <rdfs:subClassOf rdf:resource="#DataCollectionTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SimulationOutputAnalysis">
+    <rdfs:subClassOf rdf:resource="#DataAnalysisTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Validation">
+    <rdfs:subClassOf rdf:resource="#SimulationTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Screening">
+    <rdfs:subClassOf rdf:resource="#ProjectDevelopmentTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Ethnography">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="HasOngoingAccess"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="IsOvertOrCovert"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="IsOpenOrClosed"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="#DataCollectionTask"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ParticipantObservation">
+    <rdfs:subClassOf rdf:resource="#Ethnography"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="HasTranscript">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produced resource</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="TranscriptOf"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#Transcript"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:ID="HasOutput"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasDynamicLibraries">
+    <rdfs:domain rdf:resource="#SimulationModelRun"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#SoftwareLibrary"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasAnalysis">
+    <rdfs:domain rdf:resource="#SimulationTask"/>
+    <rdfs:range rdf:resource="#SimulationOutputAnalysis"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ResearchAimOrQuestionInvestigated">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Why</rdfs:comment>
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#ResearchQuestion"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#ResearchAim"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasInterviewSchedule">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="HasSchedule"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="UsedInInterview"/>
+    </owl:inverseOf>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Semi-structuredInterview"/>
+          <owl:Class rdf:about="#UnstructuredInterview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#InterviewSchedule"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="UsedInContentAnalysis">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasCodingSchedule"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="UsedIn"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="#ContentAnalysis"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/resource.owl#CodingSchedule"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="CreatedUsingDiaryTask">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="CreatedDiary"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:ID="ProducedDuring"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/resource.owl#Diary"/>
+    <rdfs:range rdf:resource="#ResearchDiary"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="PartOfDisseminationStage">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="PartOfStage"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasDisseminationTask"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#DisseminationStage"/>
+    <rdfs:domain rdf:resource="#DisseminationTask"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="DesignedInTask">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Questionnaire"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Schedule"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#CodingScheme"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Diary"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#DesignStage"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="DesignedResource"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#ProducedDuring"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasDisseminationTask">
+    <owl:inverseOf rdf:resource="#PartOfDisseminationStage"/>
+    <rdfs:range rdf:resource="#DisseminationTask"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#DisseminationStage"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="HasTask"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="Configures">
+    <rdfs:domain rdf:resource="#ModelConfiguration"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#SimulationModel"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasParticipants">
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Person"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="ParticipatedIn"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="PartOfDataPreparationStage">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#PartOfStage"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasDataPreparationTask"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <rdfs:domain rdf:resource="#DataPreparationTask"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#DataPreparationStage"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="PartOfAnalysisStage">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasAnalysisTask"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#DataAnalysisTask"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#AnalysisStage"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#PartOfStage"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasDataCollector">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="DataCollectorFor"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Person"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="PartOfProjectDevelopmentStage">
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#ProjectDevelopmentStage"/>
+    <rdfs:domain rdf:resource="#ProjectDevelopmentTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasProjectDevelopmentTask"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#PartOfStage"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasCodingSchedule">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#HasSchedule"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#CodingSchedule"/>
+    <rdfs:domain rdf:resource="#ContentAnalysis"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+    <owl:inverseOf rdf:resource="#UsedInContentAnalysis"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="UsedToObserve">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#UsedIn"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasObservationSchedule"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/resource.owl#ObservationSchedule"/>
+    <rdfs:range rdf:resource="#Ethnography"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="AddressOfSession">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Where</rdfs:comment>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Experiment"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+          <owl:Class rdf:about="#Interview"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasSessionAddress"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#Address"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasInput">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Resource"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#Collection"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Task"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#ProjectStage"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="InputOfTask"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="FactualNotesOf">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Ethnography"/>
+          <owl:Class rdf:about="#StructuredObservation"/>
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#ProducedDuring"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasFactualNotes"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/resource.owl#FactualNotes"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#UsedIn">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#HasSchedule"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#InputOfTask"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/resource.owl#Schedule"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasTask">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#PartOfStage"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#ProjectStage"/>
+    <rdfs:range rdf:resource="#Task"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="RecordingOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasRecording"/>
+    </owl:inverseOf>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Video"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Image"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#AudioRecording"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Ethnography"/>
+          <owl:Class rdf:about="#StructuredObservation"/>
+          <owl:Class rdf:about="#Experiment"/>
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#ProducedDuring"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasSchedule">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#HasInput"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#Schedule"/>
+    <owl:inverseOf rdf:resource="#UsedIn"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="PartOfDataCollectionStage">
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#DataCollectionStage"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#PartOfStage"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasDataCollectionTask"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasDesignTask">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="PartOfDesignStage"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf rdf:resource="#HasTask"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#DesignStage"/>
+    <rdfs:range rdf:resource="#DesignTask"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="DatasetCreated">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#QuestionnaireSurvey"/>
+          <owl:Class rdf:about="#Experiment"/>
+          <owl:Class rdf:about="#StructuredObservation"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#StatisticalDataResource"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#TabulatedDataResource"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="#HasOutput"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="CollectedInSurveyOrExperiment"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produced resource</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasTaskItem">
+    <rdfs:range rdf:resource="#Task"/>
+    <rdfs:domain rdf:resource="#TaskCollection"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.policygrid.org/utility.owl#HasItem"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasRecording">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produced resource</rdfs:comment>
+    <owl:inverseOf rdf:resource="#RecordingOf"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Experiment"/>
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+          <owl:Class rdf:about="#StructuredObservation"/>
+          <owl:Class rdf:about="#Ethnography"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Video"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Image"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#AudioRecording"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="#HasOutput"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasFactualNotes">
+    <owl:inverseOf rdf:resource="#FactualNotesOf"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+          <owl:Class rdf:about="#StructuredObservation"/>
+          <owl:Class rdf:about="#Ethnography"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#FactualNotes"/>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="#HasOutput"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produced resource</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasObservationSchedule">
+    <rdfs:subPropertyOf rdf:resource="#HasSchedule"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+    <owl:inverseOf rdf:resource="#UsedToObserve"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#ObservationSchedule"/>
+    <rdfs:domain rdf:resource="#Ethnography"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="UsedByTask">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="UsedResource"/>
+    </owl:inverseOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#InputOfTask"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="QuestionnaireUsed">
+    <rdfs:subPropertyOf rdf:resource="#HasInput"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#Questionnaire"/>
+    <rdfs:domain rdf:resource="#QuestionnaireSurvey"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="UsedInSurvey"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasConfiguration">
+    <rdfs:domain rdf:resource="#SimulationTask"/>
+    <rdfs:range rdf:resource="#ModelConfiguration"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="IntervieweeOf">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Activities/Roles</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasInterviewees"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#ParticipatedIn"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="#Interview"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasExpectedOutput">
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#DataResource"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SystemTest"/>
+          <owl:Class rdf:about="#Verification"/>
+          <owl:Class rdf:about="#Calibration"/>
+          <owl:Class rdf:about="#Validation"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasRespondents">
+    <rdfs:domain rdf:resource="#QuestionnaireSurvey"/>
+    <rdfs:subPropertyOf rdf:resource="#HasParticipants"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="RespondentOf"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#DataCollectorFor">
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#Person"/>
+    <rdfs:range rdf:resource="#DataCollectionTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Activities/Roles</rdfs:comment>
+    <owl:inverseOf rdf:resource="#HasDataCollector"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#PartOfDesignStage">
+    <rdfs:domain rdf:resource="#DesignTask"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#DesignStage"/>
+    <owl:inverseOf rdf:resource="#HasDesignTask"/>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#PartOfStage"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="TranscriptSummaryOfInterview">
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#ProducedDuring"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="HasTranscriptSummary"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/resource.owl#TranscriptSummary"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="HasInterviewer">
+    <rdfs:subPropertyOf rdf:resource="#HasDataCollector"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="InterviewerFor"/>
+    </owl:inverseOf>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Person"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#UsedInInterview">
+    <rdfs:domain rdf:resource="http://www.policygrid.org/resource.owl#InterviewSchedule"/>
+    <owl:inverseOf rdf:resource="#HasInterviewSchedule"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Semi-structuredInterview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+          <owl:Class rdf:about="#UnstructuredInterview"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="#UsedIn"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#InputOfTask">
+    <owl:inverseOf rdf:resource="#HasInput"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Resource"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#Collection"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#ProjectStage"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#CreatedDiary">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produced resource</rdfs:comment>
+    <rdfs:domain rdf:resource="#ResearchDiary"/>
+    <owl:inverseOf rdf:resource="#CreatedUsingDiaryTask"/>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="#HasOutput"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#Diary"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasDataCollectionTask">
+    <rdfs:subPropertyOf rdf:resource="#HasTask"/>
+    <rdfs:range rdf:resource="#DataCollectionTask"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#DataCollectionStage"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf rdf:resource="#PartOfDataCollectionStage"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#InterviewerFor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Activities/Roles</rdfs:comment>
+    <owl:inverseOf rdf:resource="#HasInterviewer"/>
+    <rdfs:subPropertyOf rdf:resource="#DataCollectorFor"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#Person"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#RespondentOf">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="#ParticipatedIn"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range rdf:resource="#QuestionnaireSurvey"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Activities/Roles</rdfs:comment>
+    <owl:inverseOf rdf:resource="#HasRespondents"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="VariesParameters">
+    <rdfs:domain rdf:resource="#Calibration"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#SimulationInput"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#UsedResource">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Used resources</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#HasInput"/>
+    <owl:inverseOf rdf:resource="#UsedByTask"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#TranscriptOf">
+    <owl:inverseOf rdf:resource="#HasTranscript"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/resource.owl#Transcript"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#ProducedDuring"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasProjectDevelopmentTask">
+    <rdfs:subPropertyOf rdf:resource="#HasTask"/>
+    <owl:inverseOf rdf:resource="#PartOfProjectDevelopmentStage"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#ProjectDevelopmentStage"/>
+    <rdfs:range rdf:resource="#ProjectDevelopmentTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#PartOfStage">
+    <owl:inverseOf rdf:resource="#HasTask"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#ProjectStage"/>
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#DesignedResource">
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#DesignStage"/>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="#HasOutput"/>
+    </rdfs:subPropertyOf>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Questionnaire"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Schedule"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#CodingScheme"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Diary"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#DesignedInTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produced resource</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasAnalysisTask">
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#AnalysisStage"/>
+    <rdfs:range rdf:resource="#DataAnalysisTask"/>
+    <owl:inverseOf rdf:resource="#PartOfAnalysisStage"/>
+    <rdfs:subPropertyOf rdf:resource="#HasTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasTranscriptSummary">
+    <owl:inverseOf rdf:resource="#TranscriptSummaryOfInterview"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#TranscriptSummary"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produced resource</rdfs:comment>
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="#HasOutput"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasInterviewees">
+    <rdfs:domain rdf:resource="#Interview"/>
+    <rdfs:subPropertyOf rdf:resource="#HasParticipants"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Who</rdfs:comment>
+    <owl:inverseOf rdf:resource="#IntervieweeOf"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasRun">
+    <rdfs:domain rdf:resource="#SimulationTask"/>
+    <rdfs:range rdf:resource="#SimulationModelRun"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#UsedInSurvey">
+    <owl:inverseOf rdf:resource="#QuestionnaireUsed"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/resource.owl#Questionnaire"/>
+    <rdfs:range rdf:resource="#QuestionnaireSurvey"/>
+    <rdfs:subPropertyOf rdf:resource="#InputOfTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#ParticipatedIn">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Activities/Roles</rdfs:comment>
+    <owl:inverseOf rdf:resource="#HasParticipants"/>
+    <rdfs:range rdf:resource="#DataCollectionTask"/>
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#Person"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasDataPreparationTask">
+    <rdfs:domain rdf:resource="http://www.policygrid.org/utility.owl#DataPreparationStage"/>
+    <rdfs:range rdf:resource="#DataPreparationTask"/>
+    <rdfs:subPropertyOf rdf:resource="#HasTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <owl:inverseOf rdf:resource="#PartOfDataPreparationStage"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#HasSessionAddress">
+    <owl:inverseOf rdf:resource="#AddressOfSession"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Address"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Experiment"/>
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >xxx</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="ProducedResources">
+    <rdfs:subPropertyOf>
+      <owl:InverseFunctionalProperty rdf:about="#HasOutput"/>
+    </rdfs:subPropertyOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produced resource</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#CollectedInSurveyOrExperiment">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#StructuredObservation"/>
+          <owl:Class rdf:about="#QuestionnaireSurvey"/>
+          <owl:Class rdf:about="#Experiment"/>
+          <owl:Class rdf:about="#SimulationExperiment"/>
+          <owl:Class rdf:about="#ExploratoryExperiment"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#DatasetCreated"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#StatisticalDataResource"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#TabulatedDataResource"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:about="#ProducedDuring"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="NumberReceived">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+    <rdfs:domain rdf:resource="#QuestionnaireSurvey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ActionsToMinimiseLosses">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#IsOvertOrCovert">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:domain rdf:resource="#Ethnography"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >covert</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >overt</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="FrequencyOfDataCollection">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >When</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="AnalysisApproach">
+    <rdfs:domain rdf:resource="#DataAnalysisTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="HypothesisTested">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Experiment"/>
+          <owl:Class rdf:about="#QuestionnaireSurvey"/>
+          <owl:Class rdf:about="#StructuredObservation"/>
+          <owl:Class rdf:about="#SimulationExperiment"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Why</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Questions">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#StructuredInterview"/>
+          <owl:Class rdf:about="#QuestionnaireSurvey"/>
+          <owl:Class rdf:about="#Semi-structuredInterview"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="PredictedOutcome">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#SimulationExperiment"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Hypothesis">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Why</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Weighting">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DataAnalysisTask"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="CollectedInCountry">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Where</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="HasKeyWords">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >xxx</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Resource"/>
+          <owl:Class rdf:about="#Task"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#Project"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="TypeOfData">
+    <rdfs:domain rdf:resource="#DataAnalysisTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="TypeOfFocusGroup">
+    <rdfs:domain rdf:resource="#FocusGroup"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="DescriptiveStatisticsUsed">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#AnalysisApproach"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="TypeOfResearchInstrument">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="Location">
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Where</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="SamplingError">
+    <rdfs:domain rdf:resource="#DataAnalysisTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="TimeDimension">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >When</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="QualityOfDataSource">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DataAnalysisTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >xxx</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ModeOfDataCollection">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="SpatialUnitsOfInvestigation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="GeoLocation">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Where</rdfs:comment>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="MajorDeviationsFromTheSample">
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="HasMainTopics">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Task"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Resource"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#Project"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >xxx</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#InterpretativeMethodsUsed">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#AnalysisApproach"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="GeographicalCoverage">
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Where</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="CommentsOnDataSource">
+    <rdfs:domain rdf:resource="#DataAnalysisTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >xxx</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#ResponseRate">
+    <rdfs:domain rdf:resource="#QuestionnaireSurvey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="StatisticalAnalysisUsed">
+    <rdfs:subPropertyOf rdf:resource="#AnalysisApproach"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="NumberOfSessions">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Interview"/>
+          <owl:Class rdf:about="#FocusGroup"/>
+          <owl:Class rdf:about="#Experiment"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="RoleOfKeyInformants">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:domain rdf:resource="#Ethnography"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="NumberSentOut">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain rdf:resource="#QuestionnaireSurvey"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="ObservationUnit">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#HasOngoingAccess">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="#Ethnography"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#IsOpenOrClosed">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >closed</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >open</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Ethnography"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="NumberOfUnits">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#SamplingProcedures">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="MeasurementUnitsUsed">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="GeographicalUnit">
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Where</rdfs:comment>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="CharacteristicsOfDataCollection">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="RoleOfEthnographer">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >How</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Ethnography"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="HasFitnessMetric">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Validation"/>
+          <owl:Class rdf:about="#Calibration"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="DateOfDistribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#QuestionnaireSurvey"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Date"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >When</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#ProducedDuring">
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:about="#HasOutput"/>
+    </owl:inverseOf>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#ProjectStage"/>
+          <owl:Class rdf:about="#Task"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Resource"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#Collection"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tasks and stages</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="RunOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#SimulationModelInstance"/>
+    <rdfs:domain rdf:resource="#SimulationModelRun"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="UsesModel">
+    <rdfs:range rdf:resource="http://www.policygrid.org/resource.owl#SimulationModel"/>
+    <rdfs:domain rdf:resource="#SimulationTask"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#TimePeriodCovered">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >When</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Date"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="TestResult">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#SystemTest"/>
+          <owl:Class rdf:about="#Verification"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >pass</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >fail</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="HasStartDate">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >When</rdfs:comment>
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Date"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="HasFitnessLevel">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Validation"/>
+          <owl:Class rdf:about="#Calibration"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="DateOfPilot">
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Date"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >When</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="DateOfCollection">
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Date"/>
+    <rdfs:domain rdf:resource="#DataCollectionTask"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >When</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="HasPredictionDate">
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#DatePoint"/>
+    <rdfs:domain rdf:resource="#SimulationExperiment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="QuantitativeOrQualitativeData">
+    <rdfs:domain rdf:resource="#DataAnalysisTask"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >What</rdfs:comment>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >quantitative</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >qualitative</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="HasEndDate">
+    <rdfs:domain rdf:resource="#Task"/>
+    <rdfs:range rdf:resource="http://www.policygrid.org/utility.owl#Date"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >When</rdfs:comment>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#HasOutput">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Produced resource</rdfs:comment>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Task"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#ProjectStage"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.policygrid.org/resource.owl#Resource"/>
+          <rdf:Description rdf:about="http://www.policygrid.org/utility.owl#Collection"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#ProducedDuring"/>
+  </owl:InverseFunctionalProperty>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

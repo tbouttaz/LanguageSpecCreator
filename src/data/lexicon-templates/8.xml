@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- [source] used/has [target] [predicate]s -->
+
+<!DOCTYPE dt>
+<dt>
+	<node cat="smain" rel="root">
+		<node cat="verb" rel="hd" root="use" />
+		<node cat="np" rel="su" idx="source"/>
+		<node cat="np" rel="obj">
+			<node cat="adj" rel="mod" idx="target" />
+			<node cat="noun" rel="hd" idx="predicate">
+				<morph num="plural" />
+			</node>
+		</node>
+	</node>
+</dt>

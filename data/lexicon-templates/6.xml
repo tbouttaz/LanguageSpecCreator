@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- [source] has/includes/is (the) [predicate] [target] -->
+
+<!DOCTYPE dt>
+<dt>
+	<node cat="smain" rel="root">
+		<node cat="verb" rel="hd" root="have"/>
+		<node cat="np" rel="su" idx="source"/>
+		<node cat="np" rel="comp">
+			<node cat="det" rel="det" root="the" />
+			<node cat="adj" rel="mod" idx="predicate" />
+			<node cat="noun" rel="hd" idx="target" />
+		</node>
+	</node>
+</dt>

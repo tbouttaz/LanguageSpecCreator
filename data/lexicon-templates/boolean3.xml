@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- [source] (is not) [predicate] -->
+
+<!DOCTYPE dt>
+<dt>
+	<node cat="smain" rel="root">
+		<node cat="verb" rel="hd" idx="predicate" >
+			<morph actor="passive" />
+		</node>
+		<node cat="np" rel="obj" idx="source" />
+	</node>
+</dt>

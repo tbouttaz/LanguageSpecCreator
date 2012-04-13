@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/commons-fileupload-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/gwt-servlet.jar"/>
+	<classpathentry kind="lib" path="lib/gwt-user.jar"/>
+	<classpathentry kind="lib" path="lib/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/jena.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-model-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-query-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-queryresultio-sparqlxml-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-repository-api-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-repository-http-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-repository-sail-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-rio-api-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-rio-rdfxml-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-sail-memory-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/openrdf-sesame-2.0-onejar.jar"/>
+	<classpathentry kind="lib" path="lib/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="lib/iri.jar"/>
+	<classpathentry kind="lib" path="lib/icu4j_3_4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

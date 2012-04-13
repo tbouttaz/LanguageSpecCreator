@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns="http://www.policygrid.org/project.owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:swap="http://www.w3.org/2000/10/swap/pim/contact#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:utility="http://www.policygrid.org/utility.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:wgs="http://www.w3.org/2003/01/geo/wgs84_pos#"
+  xml:base="http://www.policygrid.org/project.owl" > 
+  <rdf:Description rdf:nodeID="A0">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="#ResearchAim"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:resource="http://www.policygrid.org/utility.owl#Department"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A2">
+    <rdf:rest rdf:nodeID="A3"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restricted to workpackage members</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A4">
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <owl:onProperty rdf:resource="#hasDescription"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasProjectPhoto">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A5">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unknown</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A6">
+    <rdf:rest rdf:nodeID="A7"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">male</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="#projectSubtitle">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A8">
+    <rdf:rest rdf:nodeID="A9"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">private</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A10">
+    <owl:unionOf rdf:nodeID="A11"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Project">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PrincipalInvestigator">
+    <rdfs:subClassOf rdf:resource="#ProjectRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#projectWebsite">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Subcontractor">
+    <rdfs:subClassOf rdf:resource="#ProjectRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasResearchAims">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xxx</rdfs:comment>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#ResearchAim"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A12">
+    <rdf:rest rdf:nodeID="A0"/>
+    <rdf:first rdf:resource="#ResearchQuestion"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasResearchQuestions">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xxx</rdfs:comment>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#ResearchQuestion"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A13">
+    <owl:oneOf rdf:nodeID="A6"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataRange"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A7">
+    <rdf:rest rdf:nodeID="A5"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">female</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="">
+    <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:imports rdf:resource="http://www.policygrid.org/utility.owl"/>
+    <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#projectTitle">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Member">
+    <rdfs:subClassOf rdf:resource="#ProjectRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A3">
+    <rdf:rest rdf:nodeID="A8"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restricted to project members</rdf:first>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdfs.org/sioc/ns#has_function">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#endDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A14">
+    <owl:onProperty rdf:resource="#hasDescription"/>
+    <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A11">
+    <rdf:rest rdf:nodeID="A1"/>
+    <rdf:first rdf:resource="http://www.policygrid.org/utility.owl#Organisation"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A15">
+    <owl:oneOf rdf:nodeID="A2"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DataRange"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CoInvestigator">
+    <rdfs:subClassOf rdf:resource="#ProjectRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Researcher">
+    <rdfs:subClassOf rdf:resource="#ProjectRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasSubProject">
+    <rdfs:range rdf:resource="#Project"/>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasDescription">
+    <rdfs:domain rdf:nodeID="A16"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">xxx</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#roleOf">
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:domain rdf:resource="#ProjectRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Collaborator">
+    <rdfs:subClassOf rdf:resource="#ProjectRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ResearchQuestion">
+    <rdfs:subClassOf rdf:nodeID="A14"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#startDate">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdfs.org/sioc/ns#function_of">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#organisationOrDepartment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">General information</rdfs:comment>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:nodeID="A10"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ProjectRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A9">
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">public</rdf:first>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ResearchAim">
+    <rdfs:subClassOf rdf:nodeID="A4"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#hasMemberRole">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#ProjectRole"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#projectGrantNumber">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">General information</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="A16">
+    <owl:unionOf rdf:nodeID="A12"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid Composer -->
