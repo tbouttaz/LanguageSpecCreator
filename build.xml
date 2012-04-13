@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="langSpecCreator">
+    <!--ANT 1.7 is required                                        -->
+
+    <property name="src.dir" value="src"/>
+	<property name="build.dir" value="bin" />
+	<property name="dist.dir" value="dist" />
+	<property name="docs.dir" value="docs" />
+    <property name="lib.dir" value="lib"/>
+
+    <property name="main-class"  value="SpecificationCreation.SpecificationCreator"/>
+    	
+	<!-- Deletes the existing build, docs and dist directory-->
+	<target name="clean">
+		<delete dir="${dist.dir}" />
+	</target>
+			
+	<!-- Creates the  build, docs and dist directory-->
+	<target name="makedir">
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<target name="init" depends="clean, makedir" />
+	
+	<target name="create_run_jar" depends="init">
+        <jar destfile="${dist.dir}/langSpecCreator.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="${main-class}"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ commons-fileupload-1.1.1.jar gwt-servlet.jar gwt-user.jar jdom.jar jena.jar openrdf-model-2.0.jar openrdf-query-2.0.jar openrdf-queryresultio-sparqlxml-2.0.jar openrdf-repository-api-2.0.jar openrdf-repository-http-2.0.jar openrdf-repository-sail-2.0.jar openrdf-rio-api-2.0.jar openrdf-rio-rdfxml-2.0.jar openrdf-sail-memory-2.0.jar commons-logging.jar openrdf-sesame-2.0-onejar.jar xercesImpl.jar iri.jar icu4j_3_4.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/bin"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="commons-fileupload-1.1.1.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="gwt-servlet.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="gwt-user.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="jdom.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="jena.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-model-2.0.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-query-2.0.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-queryresultio-sparqlxml-2.0.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-repository-api-2.0.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-repository-http-2.0.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-repository-sail-2.0.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-rio-api-2.0.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-rio-rdfxml-2.0.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-sail-memory-2.0.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="commons-logging.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="openrdf-sesame-2.0-onejar.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="xercesImpl.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="iri.jar"/>
+            <zipfileset dir="/Users/thomas/Documents/workspace/LanguageSpecificationCreator/lib" includes="icu4j_3_4.jar"/>
+        </jar>
+    </target>
+	
+	<target name="main" depends="create_run_jar"/>
+</project>
