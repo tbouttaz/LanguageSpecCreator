@@ -1,0 +1,1 @@
+This application assists its user in the creation of language specification files, describing how the properties contained in an OWL ontology should be translated in English. Those files are used by a Natural Language Generation service (https://github.com/tbouttaz/RDF2TextTranslator) to generate textual descriptions from RDF triples.
